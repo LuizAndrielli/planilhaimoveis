@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Index</title>
+  <style>
+    body {
+      background-color: #202020;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+     h1 {
+      color: #f0f0f0;
+      text-align: center; /* Adicionamos esta propriedade para centralizar o texto */
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #303030;
+      color: #fff;
+      border: 1px solid #444;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Sistema de gestão de imóveis</h1>
+<form action="register" method="post">
+  <label for="firstname">Nome:</label>
+  <input type="text" name="nome"/>
+
+  <label for="vencimento">Data do Contrato:</label>
+  <input type="date" name="vencimento"/>
+
+  <label for="reajuste">Reajuste:</label>
+  <input type="date" name="reajuste"/>
+
+  
+  <label for="imobiliaria">Imobiliária:</label>
+  <input type="text" name="imobiliaria"/>
+
+  <label for="cpfl">Inscricao na CPFL:</label>
+  <input type="text" name="cpfl"/>
+  
+  <label for="saae">Inscricao no SAAE:</label>
+  <input type="text" name="saae"/>
+  <br/>
+  <button type="submit">Salvar</button>
+</form>
+<br/>
+
+</body>
+</html>
