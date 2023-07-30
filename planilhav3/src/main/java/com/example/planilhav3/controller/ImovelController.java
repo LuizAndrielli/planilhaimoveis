@@ -70,16 +70,14 @@ public class ImovelController {
 	}
 	
 	@PostMapping("/register")
-	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model, @RequestParam("reajuste") String reajusteString) {
+	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model, @RequestParam("reajuste") String reajusteString, @RequestParam("vencimento") String vencimentoString) {
 		model.addAttribute("firstname", imovel.getNome());
 //		model.addAttribute("vencimento", imovel.getVencimento().format(dF));
 //		System.out.println(imovel.getVencimento());
 //		model.addAttribute("reajuste", imovel.getReajuste().format(dF));
-		System.out.println("Reajuste String: "+ reajusteString);
 //		LocalDate data = LocalDate.parse(reajusteString, dF);
 //		model.addAttribute("reajuste", data);
-		model.addAttribute("imobiliaria", imovel.getImobiliaria());
-		System.out.println(imovel.toString());
+		model.addAttribute("imobiliaria", imovel.getImobiliaria());		
 		repo.save(imovel);
 		return "index";
 	}
