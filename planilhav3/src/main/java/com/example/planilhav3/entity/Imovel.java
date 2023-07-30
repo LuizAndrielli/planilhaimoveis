@@ -17,9 +17,9 @@ public class Imovel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate vencimento;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate reajuste;
 	private String imobiliaria;
 	private String cpfl;

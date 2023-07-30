@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.planilhav3.entity.Imovel;
@@ -31,8 +32,8 @@ public class ImovelController {
 	@Autowired
 	private ImovelRepository repo;	
 	
-	private DateTimeFormatter dF = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		
+	private DateTimeFormatter dF = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+																
 	
 	@GetMapping("/")
 	public String index() {
@@ -69,12 +70,14 @@ public class ImovelController {
 	}
 	
 	@PostMapping("/register")
-	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model) {
+	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model, @RequestParam("reajuste") String reajusteString) {
 		model.addAttribute("firstname", imovel.getNome());
-//		model.addAttribute("vencimento", imovel.getVencimento().format(dF));		
-		model.addAttribute("vencimento", LocalDate.now());
+//		model.addAttribute("vencimento", imovel.getVencimento().format(dF));
+//		System.out.println(imovel.getVencimento());
 //		model.addAttribute("reajuste", imovel.getReajuste().format(dF));
-		model.addAttribute("reajuste", LocalDate.now());
+		System.out.println("Reajuste String: "+ reajusteString);
+//		LocalDate data = LocalDate.parse(reajusteString, dF);
+//		model.addAttribute("reajuste", data);
 		model.addAttribute("imobiliaria", imovel.getImobiliaria());
 		System.out.println(imovel.toString());
 		repo.save(imovel);
