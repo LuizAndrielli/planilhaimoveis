@@ -35,6 +35,7 @@
 					<td th:text="${imovel.saae}"></td>
 					<td> 
 						<a th:href="@{/imoveis/deletar/{id}(id=${imovel.id})}" class="btn btn-danger">Excluir</a>
+						<a th:href="@{/imoveis/alterar/{id}(id=${imovel.id})}" class="btn btn-primary">Alterar</a>
 					</td> 
 				</tr>
 			</tbody>

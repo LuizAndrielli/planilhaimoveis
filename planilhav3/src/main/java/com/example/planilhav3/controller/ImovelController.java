@@ -69,6 +69,11 @@ public class ImovelController {
 		 return ResponseEntity.created(uri).body(resultado);
 	}
 	
+	@GetMapping("/imoveis/novo")
+	public String novaPessoa(@ModelAttribute("imovel") Imovel imovel) {
+		return "imovel/form";
+	}
+	
 	@PostMapping("/register")
 	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model, @RequestParam("reajuste") String reajusteString, @RequestParam("vencimento") String vencimentoString) {
 		model.addAttribute("firstname", imovel.getNome());
@@ -79,7 +84,13 @@ public class ImovelController {
 //		model.addAttribute("reajuste", data);
 		model.addAttribute("imobiliaria", imovel.getImobiliaria());		
 		repo.save(imovel);
-		return "index";
+		return "redirect:/imoveis/novo";
+	}
+	
+	@PostMapping("/imoveis/salvar")
+	public String salvarPessoa(@ModelAttribute("imovel") Imovel imovel) {
+		repo.save(imovel);
+		return "redirect:imovel/list";
 	}
 	
 	@GetMapping("/imoveis/deletar/{id}")
@@ -94,5 +105,14 @@ public class ImovelController {
         return "redirect:/imoveis/lista";
 	}
 	
+	@GetMapping("/imoveis/alterar/{id}")
+	public String alterarImovel(@PathVariable("id")Long id, Model model) {
+		Optional<Imovel> imovelOpt = repo.findById(id);
+		if(imovelOpt.isEmpty()) {
+			throw new IllegalArgumentException("Imovel invalido");
+		}
+		model.addAttribute("imovel", imovelOpt);
+		return "imovel/form";
+	}
 
 }
