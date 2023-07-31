@@ -33,6 +33,7 @@ public class ImovelController {
 	private ImovelRepository repo;	
 	
 	private DateTimeFormatter dF = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+	private DateTimeFormatter dF2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 																
 	
 	@GetMapping("/")
@@ -43,7 +44,7 @@ public class ImovelController {
 	
 	
 	@GetMapping("/imoveis/lista")
-	public String imoveisLista(Model model) {
+	public String imoveisLista(Model model) {		
 		model.addAttribute("listaimoveis", repo.findAll());
 		return "imovel/list";
 	}

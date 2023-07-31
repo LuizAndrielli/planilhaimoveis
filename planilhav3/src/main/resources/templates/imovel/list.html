@@ -28,8 +28,8 @@
 			<tbody>
 				<tr th:each="imovel : ${listaimoveis}">
 					<td th:text="${imovel.nome}"></td>
-					<td th:text="${imovel.vencimento}"></td>
-					<td th:text="${imovel.reajuste}"></td>
+          			<td th:text="${#temporals.format(imovel.vencimento, 'dd-MM-yyyy')}"></td>
+           		    <td th:text="${#temporals.format(imovel.reajuste, 'dd-MM-yyyy')}"></td>
 					<td th:text="${imovel.imobiliaria}"></td>
 					<td th:text="${imovel.cpfl}"></td>
 					<td th:text="${imovel.saae}"></td>
