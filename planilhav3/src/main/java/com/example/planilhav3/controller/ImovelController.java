@@ -33,15 +33,20 @@ public class ImovelController {
 	private ImovelRepository repo;	
 	
 	private DateTimeFormatter dF = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	private DateTimeFormatter dF2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-																
+	private DateTimeFormatter dF2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");																
 	
 	@GetMapping("/")
-	public String index() {
-		return "index";
+	public String index(Model model) {
+		List<Imovel> listAll = repo.findAll();
+		for (Imovel imovel : listAll) {
+			if(imovel.getVencimento().isBefore(imovel.getReajuste())) {
+				listAll.remove(imovel);
+			}
+			model.addAttribute("listaImoveisVencidos",listAll);
+			return "/imovel/main";
+		}
+		return "/imovel/main";
 	}
-
-	
 	
 	@GetMapping("/imoveis/lista")
 	public String imoveisLista(Model model) {		
@@ -89,7 +94,7 @@ public class ImovelController {
 	}
 	
 	@PostMapping("/imoveis/salvar")
-	public String salvarPessoa(@ModelAttribute("imovel") Imovel imovel) {
+	public String salvarImovel2(@ModelAttribute("imovel") Imovel imovel) {
 		repo.save(imovel);
 		return "redirect:imovel/list";
 	}
