@@ -3,6 +3,7 @@ package com.example.planilhav3.controller;
 import java.net.URI;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,15 +38,18 @@ public class ImovelController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
-		List<Imovel> listAll = repo.findAll();
-		for (Imovel imovel : listAll) {
-			if(imovel.getVencimento().isBefore(imovel.getReajuste())) {
-				listAll.remove(imovel);
-			}
-			model.addAttribute("listaImoveisVencidos",listAll);
-			return "/imovel/main";
-		}
-		return "/imovel/main";
+	    List<Imovel> listAll = repo.findAll();
+	    Iterator<Imovel> iterator = listAll.iterator();
+	    
+	    while (iterator.hasNext()) {
+	        Imovel imovel = iterator.next();
+	        if (imovel.getVencimento().isBefore(imovel.getReajuste())) {
+	            iterator.remove();
+	        }			
+	    }
+	    
+	    model.addAttribute("listaImoveisVencidos", listAll);
+	    return "/imovel/main";
 	}
 	
 	@GetMapping("/imoveis/lista")
