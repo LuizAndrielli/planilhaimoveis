@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de gestão de imóveis</title>
+
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+
+<style>
+    body {
+        background-color: #2c3e50;
+        color: #fff;
+    }
+
+    .notification-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #34495e;
+        border-radius: 8px;
+    }
+
+    .notification {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #34495e;
+        border: 1px solid #2c3e50;
+        border-radius: 4px;
+    }
+
+    .notification p {
+        margin: 0;
+    }
+
+    h1 {
+        color: #f39c12;
+    }
+</style>
+
+</head>
+<body>
+    <div class="notification-container">
+        <h1>Listagem dos imóveis que estão com reajuste atrasado</h1>
+        
+        <div th:each="imovel : ${listaimoveis}" class="notification">
+            <p th:text="${imovel.nome}"></p>
+        </div>
+    </div>
+</body>
+</html>

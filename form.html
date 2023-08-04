@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Gestão de Imóveis</title>
+
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+    crossorigin="anonymous">
+</head>
+<body>
+
+</script>
+    <div class="container my-2">
+        <h1>Sistema de Gestão de Imóveis</h1>
+        <hr>
+        <h2>Cadastrar imóvel</h2>
+        <form action="#" th:action="@{/register}" th:object="${imovel}" method="POST">
+        	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/additional-methods.min.js"></script>
+		<script>
+   		 $(document).ready(function () {
+        $("form").validate();
+   		 });
+   		 </script>
+            <input type="hidden" id="id" th:field="*{id}">
+            <input type="text" th:field="*{nome}" placeholder="Nome" class="form-control mb-4 col-4">
+            <form action="#" th:action="@{/register}" th:object="${imovel}" method="POST">
+    <input type="hidden" id="id" th:field="*{id}">
+    <div class="form-group">
+        <label for="vencimento">Data de Assinatura do Contrato</label>
+        <input type="date" id="vencimento" th:field="*{vencimento}" class="form-control mb-4 col-4">
+        <small class="text-danger" th:if="${#fields.hasErrors('vencimento')}" th:errors="*{vencimento}"></small>
+    </div>
+    
+    
+    
+    <div class="form-group">
+        <label for="reajuste">Data de Reajuste do Contrato</label>
+        <input type="date" id="reajuste" th:field="*{reajuste}" class="form-control mb-4 col-4">
+        <small class="text-danger" th:if="${#fields.hasErrors('reajuste')}" th:errors="*{reajuste}"></small>
+    </div>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (event) {
+        const vencimentoInput = document.getElementById('vencimento');
+        if (vencimentoInput.value === '') {
+            event.preventDefault();
+            alert('Por favor, preencha a Data de Assinatura do Contrato.');
+        }
+        
+        const reajusteInput = document.getElementById('reajuste');
+        if (reajusteInput.value === '') {
+            event.preventDefault();
+            alert('Por favor, preencha a Data de Reajuste do Contrato.');
+        }
+
+    });
+</script>
+            <input type="text" th:field="*{imobiliaria}" placeholder="Imobiliária" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{cpfl}" placeholder="CPFL" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{saae}" placeholder="SAAE" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2">Salvar</button>
+        </form>
+        <hr>
+        <a th:href="@{/}">Retornar para o início</a>
+    </div>
+</body>
+</html>

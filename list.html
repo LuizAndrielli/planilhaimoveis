@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de gestão de imóveis</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container my-2">
+		<h1>Listagem dos imoveis cadastrados</h1>
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Vencimento</th>
+					<th>Reajuste</th>
+					<th>Imobiliaria</th>
+					<th>CPFL</th>
+					<th>SAAE</th>
+					<th>Ações</th> 
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="imovel : ${listaimoveis}">
+					<td th:text="${imovel.nome}"></td>
+          			<td th:text="${#temporals.format(imovel.vencimento, 'dd-MM-yyyy')}"></td>
+           		    <td th:text="${#temporals.format(imovel.reajuste, 'dd-MM-yyyy')}"></td>
+					<td th:text="${imovel.imobiliaria}"></td>
+					<td th:text="${imovel.cpfl}"></td>
+					<td th:text="${imovel.saae}"></td>
+					<td> 
+						<a th:href="@{/imoveis/deletar/{id}(id=${imovel.id})}" class="btn btn-danger">Excluir</a>
+						<a th:href="@{/imoveis/alterar/{id}(id=${imovel.id})}" class="btn btn-primary">Alterar</a>
+					</td> 
+				</tr>
+			</tbody>
+		</table>
+		<a th:href="@{/}">Retornar para o inicio</a>
+	</div>
+</body>
+</html>

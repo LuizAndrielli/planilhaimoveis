@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de gestão de imóveis</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Sistema de Gestão de Imóveis</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/}">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/imoveis/novo}">Cadastro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/imoveis/lista}">Lista</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container my-2">
+    <h1>Listagem dos imóveis com reajuste atrasado</h1>
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Vencimento</th>
+            <th>Reajuste</th>
+            <th>Imobiliária</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="imovel : ${listaImoveisVencidos}">
+            <td th:text="${imovel.nome}"></td>
+            <td th:text="${#temporals.format(imovel.vencimento, 'dd-MM-yyyy')}"></td>
+            <td th:text="${#temporals.format(imovel.reajuste, 'dd-MM-yyyy')}"></td>
+            <td th:text="${imovel.imobiliaria}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
