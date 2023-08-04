@@ -23,102 +23,115 @@ import com.example.planilhav3.entity.Imovel;
 import com.example.planilhav3.repositories.ImovelRepository;
 import com.example.planilhav3.service.ImovelService;
 
-
 @Controller
 public class ImovelController {
-	
 
 	private ImovelService service;
-	
+
 	@Autowired
-	private ImovelRepository repo;	
-	
+	private ImovelRepository repo;
+
 	private DateTimeFormatter dF = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-	private DateTimeFormatter dF2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");																
-	
+	private DateTimeFormatter dF2 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
 	@GetMapping("/")
 	public String index(Model model) {
-	    List<Imovel> listAll = repo.findAll();
-	    Iterator<Imovel> iterator = listAll.iterator();
-	    
-	    while (iterator.hasNext()) {
-	        Imovel imovel = iterator.next();
-	        if (imovel.getVencimento().isBefore(imovel.getReajuste())) {
-	            iterator.remove();
-	        }			
-	    }
-	    
-	    model.addAttribute("listaImoveisVencidos", listAll);
-	    return "/imovel/main";
+		List<Imovel> listAll = repo.findAll();
+		Iterator<Imovel> iterator = listAll.iterator();
+
+		while (iterator.hasNext()) {
+			Imovel imovel = iterator.next();
+			if (imovel.getVencimento().isBefore(imovel.getReajuste())) {
+				iterator.remove();
+			}
+		}
+
+		model.addAttribute("listaImoveisVencidos", listAll);
+		return "/imovel/main";
 	}
-	
+
 	@GetMapping("/imoveis/lista")
-	public String imoveisLista(Model model) {		
+	public String imoveisLista(Model model) {
 		model.addAttribute("listaimoveis", repo.findAll());
 		return "imovel/list";
 	}
-	
+
 	@GetMapping("/imoveis/notificar")
 	public String notificar(Model model) {
 		List<Imovel> listAll = repo.findAll();
 		for (Imovel imovel : listAll) {
-			if(imovel.getVencimento().isBefore(imovel.getReajuste())) {
+			if (imovel.getVencimento().isBefore(imovel.getReajuste())) {
 				listAll.remove(imovel);
 			}
-			model.addAttribute("listaimoveis",listAll);
+			model.addAttribute("listaimoveis", listAll);
 			return "imovel/notify";
 		}
 		return "index";
 	}
-	
-	@PostMapping("/imoveis/novo")
-	public ResponseEntity<Imovel> salvarImovel(@RequestBody Imovel imovel)  {
-		Imovel resultado = repo.save(imovel);	
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(resultado.getId()).toUri();
-		 return ResponseEntity.created(uri).body(resultado);
-	}
-	
+
+//	@PostMapping("/imoveis/novo")
+//	public ResponseEntity<Imovel> salvarImovel(@RequestBody Imovel imovel)  {
+//		Imovel resultado = repo.save(imovel);	
+//		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+//                .buildAndExpand(resultado.getId()).toUri();
+//		 return ResponseEntity.created(uri).body(resultado);
+//	}
+
 	@GetMapping("/imoveis/novo")
 	public String novaPessoa(@ModelAttribute("imovel") Imovel imovel) {
 		return "imovel/form";
 	}
-	
+
 	@PostMapping("/register")
-	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model, @RequestParam("reajuste") String reajusteString, @RequestParam("vencimento") String vencimentoString) {
+	public String registrarImovelHtml(@ModelAttribute Imovel imovel, Model model,
+			@RequestParam("reajuste") String reajusteString, @RequestParam("vencimento") String vencimentoString) {
 		model.addAttribute("firstname", imovel.getNome());
-//		model.addAttribute("vencimento", imovel.getVencimento().format(dF));
-//		System.out.println(imovel.getVencimento());
-//		model.addAttribute("reajuste", imovel.getReajuste().format(dF));
-//		LocalDate data = LocalDate.parse(reajusteString, dF);
-//		model.addAttribute("reajuste", data);
-		model.addAttribute("imobiliaria", imovel.getImobiliaria());		
+
+		if (imovel.getVencimento() != null) {
+			model.addAttribute("vencimento", imovel.getVencimento().format(dF));
+		}
+
+		if (imovel.getReajuste() != null) {
+			model.addAttribute("reajuste", imovel.getReajuste().format(dF));
+		}
+
+		if (vencimentoString != null && !vencimentoString.isEmpty()) {
+			LocalDate data = LocalDate.parse(vencimentoString, dF);
+			model.addAttribute("vencimento", data);
+		}
+
+		if (reajusteString != null && !reajusteString.isEmpty()) {
+			LocalDate data = LocalDate.parse(reajusteString, dF);
+			model.addAttribute("reajuste", data);
+		}
+
+		model.addAttribute("imobiliaria", imovel.getImobiliaria());
 		repo.save(imovel);
 		return "redirect:/imoveis/novo";
 	}
-	
+
 	@PostMapping("/imoveis/salvar")
 	public String salvarImovel2(@ModelAttribute("imovel") Imovel imovel) {
 		repo.save(imovel);
 		return "redirect:imovel/list";
 	}
-	
+
 	@GetMapping("/imoveis/deletar/{id}")
-	public String deletarImovel(@PathVariable("id")Long id) {
+	public String deletarImovel(@PathVariable("id") Long id) {
 		Optional<Imovel> imovel = repo.findById(id);
-		if(imovel.isEmpty()) {
+		if (imovel.isEmpty()) {
 			throw new IllegalArgumentException("Pessoa invalida");
 		}
-        
+
 		repo.delete(imovel.get());
-        
-        return "redirect:/imoveis/lista";
+
+		return "redirect:/imoveis/lista";
 	}
-	
+
 	@GetMapping("/imoveis/alterar/{id}")
-	public String alterarImovel(@PathVariable("id")Long id, Model model) {
+	public String alterarImovel(@PathVariable("id") Long id, Model model) {
 		Optional<Imovel> imovelOpt = repo.findById(id);
-		if(imovelOpt.isEmpty()) {
+		if (imovelOpt.isEmpty()) {
 			throw new IllegalArgumentException("Imovel invalido");
 		}
 		model.addAttribute("imovel", imovelOpt);

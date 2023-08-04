@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -18,7 +19,9 @@ public class Imovel {
 	private Long id;
 	private String nome;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@NotNull(message = "A data de Assinatura do Contrato é obrigatória")
 	private LocalDate vencimento;
+	@NotNull(message = "A data de Vencimento Contrato é obrigatória")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate reajuste;
 	private String imobiliaria;
