@@ -1,0 +1,41 @@
+PLACA DE VIDEO:
+
+4 = MB 81416-12 CIRCUITO INTEGRADO - https://produto.mercadolivre.com.br/MLB-907481635-componente-eletrnico-mb81416-12-_JM#position=2&search_layout=stack&type=item&tracking_id=40c4738d-a752-42cc-8788-2d31a47c8b55
+2 = M74LS00P - https://lista.mercadolivre.com.br/74ls00#D[A:74ls00]
+2 = HD74LS04P - https://produto.mercadolivre.com.br/MLB-1891882840-kit-c05-pcs-circuito-integrado-7404hd74ls04p-dip-14-pinos-_JM#position=1&search_layout=grid&type=item&tracking_id=98d07d78-3875-4608-b00d-b9367f149b23
+2 = 74LS30PC - https://produto.mercadolivre.com.br/MLB-1700972212-circuito-integrado-sn74ls30-ci-envio-imediato-_JM#position=2&search_layout=grid&type=item&tracking_id=92b33149-3452-4c15-9746-232379f44f72
+2 = 74LS245PC - https://produto.mercadolivre.com.br/MLB-3185262028-1x-circuito-integrado-74ls245-ic-_JM#position=4&search_layout=grid&type=item&tracking_id=6fee2cdb-207d-4bf1-b1fc-60b4fecdfa51
+2 = TMS9128NL - https://produto.mercadolivre.com.br/MLB-2003472500-circuito-integrado-dip-40-pinos-tms9128nl-texas-_JM#position=1&search_layout=grid&type=item&tracking_id=3d98737c-2286-4013-b5de-6d6aa000415a
+2 = 10.738 MEGA HZ CRISTAL OCILADOR - https://produto.mercadolivre.com.br/MLB-2800868654-1-pcs-cristal-10738mhz-hc49u-master-systens-_JM#position=16&search_layout=stack&type=item&tracking_id=ae50bf4b-a527-4a93-91fa-9f63406f5b5d
+2 = 2N2222A - https://produto.mercadolivre.com.br/MLB-2044552158-transistor-2n2222a-to-92-15-unidades-_JM#position=4&search_layout=grid&type=item&tracking_id=17bdd3b2-de4a-4d99-a6e6-89e0f8b6aacc
+
+PLACA DO TECLADO:
+
+8 = UM6522A - 4 PEÇAS - (8 disponiveis) https://produto.mercadolivre.com.br/MLB-900987064-componente-eletrnico-um6522a-_JM#position=1&search_layout=grid&type=item&tracking_id=b11fbb93-93e4-47d8-bed9-abb7d21e38eb - Vendedor com reputacao mediana
+4 = SN74LS85 = 2 PEÇAS - (10 peças) https://produto.mercadolivre.com.br/MLB-1032510311-sn74ls85-circuito-integrado-10pecas-_JM#position=1&search_layout=grid&type=item&tracking_id=7a168f6b-904c-4ef5-8ce5-c76ccd0b4e36
+4 = SN74LS245 = 2 PEÇAS - (5 peças) https://produto.mercadolivre.com.br/MLB-1703199114-sn74ls245-74ls245-ci-smd-original-pct-05-pcs-_JM#position=1&search_layout=grid&type=item&tracking_id=7fc52e67-d37d-492d-b94a-d0fa31e4af9e
+2 = SN74LS42N - https://produto.mercadolivre.com.br/MLB-2907458318-kit-05-pcs-circuito-integrado-sn74ls42n-dip-16-pinos-texas-_JM#position=1&search_layout=grid&type=item&tracking_id=11a946d6-9c10-45f9-980c-8c09574e2d92
+
+PLACA CPU:
+
+2 = S74LS154N - https://produto.mercadolivre.com.br/MLB-900999772-componente-eletrnico-s74ls154n-_JM#position=1&search_layout=grid&type=item&tracking_id=471f3fb5-392c-428a-ba1f-515896ea305f
+2 = SRM20256LC12 - https://pt.aliexpress.com/item/1005004991196263.html?spm=a2g0o.productlist.main.1.1c874ca4qobdBm&algo_pvid=df65e73c-e985-49b9-be7a-ac7c182bb7d5&algo_exp_id=df65e73c-e985-49b9-be7a-ac7c182bb7d5-0&pdp_npi=4%40dis%21BRL%2142.60%2142.6%21%21%218.33%21%21%402103226116914110974424510eca6e%2112000031263516854%21sea%21BR%21120047602%21&curPageLogUid=5Lq6z5KzRPcz
+2 = UM6522A - https://produto.mercadolivre.com.br/MLB-900987064-componente-eletrnico-um6522a-_JM#position=1&search_layout=grid&type=item&tracking_id=ad16c618-2170-4453-be8a-c7cee311cdeb
+2 = MC6809P - https://produto.mercadolivre.com.br/MLB-900987064-componente-eletrnico-um6522a-_JM#position=1&search_layout=grid&type=item&tracking_id=ad16c618-2170-4453-be8a-c7cee311cdeb
+2 = LM339N - https://produto.mercadolivre.com.br/MLB-1629194885-ci-lm339n-texas-lm339-original-dip14-5-unidades-_JM#position=5&search_layout=grid&type=item&tracking_id=a99bae19-ba89-452f-9a4a-5b7293557e6d
+2 = VLM2803A - (?) https://produto.mercadolivre.com.br/MLB-1844482723-circuito-integrado-uln2803-smd-ci-envio-imediato-_JM#position=6&search_layout=stack&type=item&tracking_id=5a02b789-489f-49a4-aca7-b0bfbe34105e
+2 = HY62256A - https://produto.mercadolivre.com.br/MLB-982226339-circuito-integrado-hy62256a-lj-70-hy62256a-smd-_JM#position=1&search_layout=grid&type=item&tracking_id=821d7aa6-4b02-4f6f-9c3c-e21272f8369e
+4 = SN74LS245N - https://produto.mercadolivre.com.br/MLB-1415745443-circuito-integrado-sn74ls245n-dip-20-texas-_JM#position=3&search_layout=grid&type=item&tracking_id=ab740f17-083e-404b-bb05-bd69cd00ce5c
+2 = R6522AP - https://pt.aliexpress.com/item/1005004666396103.html?spm=a2g0o.productlist.main.5.3ddd74abDbZE61&algo_pvid=c596c228-5ff5-43ee-9837-445a59de189c&algo_exp_id=c596c228-5ff5-43ee-9837-445a59de189c-2&pdp_npi=4%40dis%21BRL%2116.36%2113.91%21%21%213.20%21%21%402101f49d16914116437376725e33df%2112000030035358863%21sea%21BR%21120047602%21&curPageLogUid=oUxwHBZRECP1
+2 = SN74LS04N - https://produto.mercadolivre.com.br/MLB-2037607578-circuito-integrado-sn74ls04n-dip14-texas-_JM#position=2&search_layout=grid&type=item&tracking_id=0ea7f1d3-ac1c-42b9-8bd0-2ff5ee00cf16
+2 = M9506D
+
+PLACA ADST:
+
+2 = SN74LS629N - https://produto.mercadolivre.com.br/MLB-907489191-componente-eletrnico-sn74ls629n-_JM#position=3&search_layout=grid&type=item&tracking_id=cf887ac6-a6d5-46bb-aad2-13e44289959a
+2 = WD2143PD (-03?) - https://produto.mercadolivre.com.br/MLB-1199468593-wd2143pd-03-circuito-integrado-2pecas-_JM#position=1&search_layout=grid&type=item&tracking_id=908a16f7-2900-41f7-8d15-27da59392d57
+2 = WD1691PE - https://produto.mercadolivre.com.br/MLB-2638109270-circuito-integrado-dip-20-pinos-wd1691-pe-western-wd1691pe-_JM#position=1&search_layout=grid&type=item&tracking_id=39e4b952-07b6-4167-bc93-93117ff26f5e
+2 = M5126-20 - https://www.ebay.co.uk/p/17006189930
+2 = FD1791-PL - https://produto.mercadolivre.com.br/MLB-901006144-componente-eletrnico-fd1791-02-_JM#position=1&search_layout=grid&type=item&tracking_id=451057f0-a73d-460a-acd5-120ed9cd01a2
+2 = MC6809P - https://produto.mercadolivre.com.br/MLB-3462044568-circuito-integrado-mc6809p-dip-40-freescale-_JM#position=2&search_layout=grid&type=item&tracking_id=3a392c14-62e3-4399-9d93-c4a10639bda1
+4 = UM6522A - 2 PEÇAS - https://produto.mercadolivre.com.br/MLB-900987064-componente-eletrnico-um6522a-_JM#position=1&search_layout=grid&type=item&tracking_id=073ac6d8-6aa2-4155-b6e5-212eb119ec17
